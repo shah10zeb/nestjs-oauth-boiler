@@ -10,9 +10,11 @@ import { CompaniesModule } from './companies/companies.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { AuthService } from './auth/auth.service';
+import { ClientModule } from './client/client.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [TeamsModule, CompaniesModule, AuthModule, UsersModule],
+  imports: [TeamsModule, CompaniesModule, AuthModule, UsersModule, ClientModule, ConfigModule.forRoot({ isGlobal: true })],
   controllers: [AppController, CompanyController, TeamController],
   providers: [AppService, CompaniesService, TeamsService],
 })

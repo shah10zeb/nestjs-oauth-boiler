@@ -1,4 +1,4 @@
-import { Controller, Get, Req } from '@nestjs/common';
+import { Controller, Get, Request, Param } from '@nestjs/common';
 import { Body, Post, UseGuards } from '@nestjs/common/decorators';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { RolesGuard } from 'src/auth/roles.gaurd';
@@ -11,23 +11,23 @@ export class CompanyController {
   constructor(private companiesService: CompaniesService) {}
 
   @Get('name/:name')
-  @Roles(Role.READ_USER)
+  @Roles(Role.READ_USER, Role.WRITE_USER)
   @UseGuards(JwtAuthGuard, RolesGuard)
-  getByName(): any {
-    return 'This action returns one company by name';
+  async getByName(@Param() params: any): Promise<any> {
+    return await this.companiesService.getCompanyByName(params.name);
   }
 
   @Get(':id')
-  @Roles(Role.READ_USER)
+  @Roles(Role.READ_USER, Role.WRITE_USER)
   @UseGuards(JwtAuthGuard, RolesGuard)
-  getById(): any {
-    return 'This action returns one company by id';
+  async getById(@Param() params: any): Promise<any> {
+    return this.companiesService.getCompanyById(params.id);
   }
 
   @Post()
-  @Roles(Role.READ_USER, Role.WRITE_USER)
+  @Roles(Role.WRITE_USER)
   @UseGuards(JwtAuthGuard, RolesGuard)
-  create(@Body() request: any): any {
-    return 'This action returns one company by creating it';
+  async create(@Body() request: any): Promise<any> {
+    return this.companiesService.createCompany(request);
   }
 }
