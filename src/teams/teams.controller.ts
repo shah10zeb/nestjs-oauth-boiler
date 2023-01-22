@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, UseGuards  } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { RolesGuard } from 'src/auth/roles.gaurd';
 import { Role } from 'src/entities/roles.enum';
@@ -19,7 +19,7 @@ export class TeamController {
   @Post('companies/:company_id')
   @Roles(Role.WRITE_USER)
   @UseGuards(JwtAuthGuard, RolesGuard)
-  create(@Body() body: any, @Param() params:any): any {
+  create(@Body() body: any, @Param() params: any): any {
     return this.teamsService.createTeam(body, params.company_id);
   }
 }

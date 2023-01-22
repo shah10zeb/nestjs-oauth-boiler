@@ -18,6 +18,6 @@ import { GoogleStrategy } from './google.strategy';
     }),
   ],
   providers: [AuthService, LocalStrategy, JwtStrategy, GoogleStrategy],
-  exports:[AuthService]
+  exports: [AuthService],
 })
 export class AuthModule {}

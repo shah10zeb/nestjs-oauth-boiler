@@ -4,8 +4,8 @@ import { Company } from './companies.entity';
 import { CompanyImplementation } from './companies.implemetation';
 
 @Module({
-    imports:[TypeOrmModule.forFeature([Company])],
-    providers:[CompanyImplementation],
-    exports:[CompanyImplementation]
+  imports: [TypeOrmModule.forFeature([Company])],
+  providers: [CompanyImplementation],
+  exports: [CompanyImplementation],
 })
 export class CompaniesImplementationModule {}

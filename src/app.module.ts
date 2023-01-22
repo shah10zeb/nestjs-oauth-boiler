@@ -14,7 +14,14 @@ import { ClientModule } from './client/client.module';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [TeamsModule, CompaniesModule, AuthModule, UsersModule, ClientModule, ConfigModule.forRoot({ isGlobal: true })],
+  imports: [
+    TeamsModule,
+    CompaniesModule,
+    AuthModule,
+    UsersModule,
+    ClientModule,
+    ConfigModule.forRoot({ isGlobal: true }),
+  ],
   controllers: [AppController, CompanyController, TeamController],
   providers: [AppService, CompaniesService, TeamsService],
 })

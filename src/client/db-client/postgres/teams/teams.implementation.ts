@@ -5,18 +5,20 @@ import { Team } from './teams.entity';
 
 @Injectable()
 export class TeamImplementation {
-  constructor(@InjectRepository(Team) private readonly repo: Repository<Team>) { }
+  constructor(
+    @InjectRepository(Team) private readonly repo: Repository<Team>,
+  ) {}
 
   public async getAll() {
-   return this.repo
-   .createQueryBuilder('team')
-   .select('*')
-   .groupBy('team.company_id ,team.id' )
-   .getRawMany();
+    return this.repo
+      .createQueryBuilder('team')
+      .select('*')
+      .groupBy('team.company_id ,team.id')
+      .getRawMany();
   }
 
   public async createTeam(teamData) {
-   const newTeamData=this.repo.create(teamData);
-   return this.repo.save(newTeamData);
-   }
+    const newTeamData = this.repo.create(teamData);
+    return this.repo.save(newTeamData);
+  }
 }

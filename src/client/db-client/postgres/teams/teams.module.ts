@@ -4,8 +4,8 @@ import { Team } from './teams.entity';
 import { TeamImplementation } from './teams.implementation';
 
 @Module({
-    imports:[TypeOrmModule.forFeature([Team])],
-    providers:[TeamImplementation],
-    exports:[TeamImplementation]
+  imports: [TypeOrmModule.forFeature([Team])],
+  providers: [TeamImplementation],
+  exports: [TeamImplementation],
 })
 export class TeamsImplementationModule {}

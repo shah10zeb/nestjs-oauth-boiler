@@ -3,7 +3,6 @@ import { CompanyImplementation } from 'src/client/db-client/postgres/companies/c
 import { CompaniesImplementationModule } from 'src/client/db-client/postgres/companies/companies.module';
 
 @Module({
-    imports:[CompaniesImplementationModule]
-
+  imports: [CompaniesImplementationModule],
 })
 export class CompaniesModule {}

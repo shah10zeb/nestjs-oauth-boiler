@@ -20,6 +20,9 @@ It also has a non-functional implementation of OAauth 2.0.
 4. rum npm i    
 5. Run npm run start  OR npm run start:dev (watch mode)
 6. Use POSTMAN to consume APIS.
+7. To build image > run docker build -t "<IMAGE_NAME>:<IMAGE_TAG>" .
+8. To run create and app in container run >
+9. docker run --rm --env-file .env -p 3000:3000 <IMAGE_NAME>:<IMAGE_TAG>
 
 #IMPROVEMENTS
 DTOS are MISSING
