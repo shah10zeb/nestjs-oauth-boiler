@@ -17,8 +17,9 @@ It also has a non-functional implementation of OAauth 2.0.
     DB_PASSWORD=<POSTGRES PASSWORD>
     DB_NAME=<POSTGRES DB NAME>
     DB_SYNC=<FLAG TO DECIDE ID SYNCRONISATION SHOULD BE ENABLED OR NOT>
-4. Run npm run start  OR npm run start:dev (watch mode)
-5. Use POSTMAN to consume APIS.
+4. rum npm i    
+5. Run npm run start  OR npm run start:dev (watch mode)
+6. Use POSTMAN to consume APIS.
 
 #IMPROVEMENTS
 DTOS are MISSING
